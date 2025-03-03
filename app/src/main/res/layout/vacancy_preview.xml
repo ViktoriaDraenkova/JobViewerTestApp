@@ -9,7 +9,7 @@
     android:layout_marginBottom="16dp"
     tools:context=".RootActivity">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

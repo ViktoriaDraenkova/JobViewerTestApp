@@ -4,11 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.practicum.domain.favourites.FavouritesInteractor
+import com.practicum.domain.models.Vacancy
 import com.practicum.domain.vacancy.VacancyInteractor
 import com.practicum.testappforemsearchingworkservise.ui.videos.VacancyScreenState
 import kotlinx.coroutines.launch
 
-class SearchViewModel(private val vacancyInteractor: VacancyInteractor) : ViewModel() {
+class SearchViewModel(private val vacancyInteractor: VacancyInteractor, private val favouritesInteractor: FavouritesInteractor) : ViewModel() {
     private val stateLiveData = MutableLiveData<VacancyScreenState>()
     fun getStateLiveData(): LiveData<VacancyScreenState> = stateLiveData
 
@@ -23,5 +25,9 @@ class SearchViewModel(private val vacancyInteractor: VacancyInteractor) : ViewMo
                 }
             }
         }
+    }
+
+    fun switchFavourite(vacancy: Vacancy) {
+        favouritesInteractor.switchFavourite(vacancy)
     }
 }

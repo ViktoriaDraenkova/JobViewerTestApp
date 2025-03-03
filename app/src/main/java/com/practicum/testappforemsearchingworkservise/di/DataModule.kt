@@ -1,7 +1,9 @@
 package com.practicum.testappforemsearchingworkservise.di
 
 
+import androidx.activity.ComponentActivity
 import com.practicum.data.api.VacancyApi
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,5 +15,12 @@ val dataModule = module {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(VacancyApi::class.java)
+    }
+
+    single {
+        androidContext().getSharedPreferences(
+            "PREFS",
+            ComponentActivity.MODE_PRIVATE
+        )
     }
 }

@@ -42,7 +42,7 @@ class SearchFragment : Fragment() {
         recyclerViewInfo = binding.useBar
 
         vacanciesViewAdapter = VacanciesViewAdapter {
-
+            viewModel.switchFavourite(it)
         }
 
         infoViewAdapter = InfoViewAdapter {

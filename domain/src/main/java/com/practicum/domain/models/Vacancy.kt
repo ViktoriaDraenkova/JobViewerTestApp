@@ -1,13 +1,14 @@
 package com.practicum.domain.models
 
 data class Vacancy(
+    val id: String,
     val lookingNumber: Int,
     val title: String,
     val address: Address,
     val company: String,
     val experience: Experience,
     val publishedDate: String,
-    val isFavourite: Boolean,
+    val isFavorite: Boolean,
 )
 
 data class Address(

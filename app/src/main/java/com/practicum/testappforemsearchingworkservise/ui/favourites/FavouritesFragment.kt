@@ -33,7 +33,7 @@ class FavouritesFragment : Fragment() {
 
         recyclerViewVacancies = binding.recyclerVacancies
         vacanciesViewAdapter = VacanciesViewAdapter {
-            // TODO
+            viewModel.deleteFromFavourites(it)
         }
         binding.recyclerVacancies.apply {
             layoutManager = LinearLayoutManager(requireContext())
@@ -42,10 +42,24 @@ class FavouritesFragment : Fragment() {
 
         recyclerViewVacancies.adapter = vacanciesViewAdapter
 
+        viewModel.getStateLiveData().observe(viewLifecycleOwner) {
+            vacanciesViewAdapter!!.setList(it)
+            binding.vacancyCount.text = makeVacanciesString(it.size)
+        }
+
+        viewModel.getFavourites()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
 
+    }
+
+    private fun makeVacanciesString(count: Int): String {
+        return when {
+            count % 10 == 1 && count % 100 != 11 -> "$count вакансия"
+            count % 10 in 2..4 && count % 100 !in 12..14 -> "$count вакансии"
+            else -> "$count вакансий"
+        }
     }
 }

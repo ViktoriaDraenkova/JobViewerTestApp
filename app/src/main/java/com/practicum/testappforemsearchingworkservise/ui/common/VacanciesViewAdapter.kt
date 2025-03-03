@@ -1,5 +1,6 @@
 package com.practicum.testappforemsearchingworkservise.ui.common
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -47,7 +48,8 @@ class VacanciesViewAdapter(
             binding.experience.text = vacancy.experience.previewText
             binding.publicationDate.text = "Опубликовано ${makeHumanDate(vacancy.publishedDate)}"
             binding.company.text = vacancy.company
-            binding.like.setImageResource(if (vacancy.isFavourite) R.drawable.ic_heart_full else R.drawable.ic_heart_empty)
+            Log.d("isFavourite", vacancy.title + " " + vacancy.isFavorite)
+            binding.like.setImageResource(if (vacancy.isFavorite) R.drawable.ic_heart_full else R.drawable.ic_heart_empty)
             binding.like.setOnClickListener {
                 clickListener.onLikeClick(vacancy)
             }
