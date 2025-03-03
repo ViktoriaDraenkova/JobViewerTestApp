@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/search_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/search"
+            style="@style/WhiteText14"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:background="@drawable/corner10"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="45"
+            android:maxLines="1"
+            android:singleLine="true"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/filter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/corner10"
+            android:src="@drawable/ic_filter"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="vacancy_count,sorting_option,sort_icon" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/use_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vacancy_count"/>
+
+    <TextView
+        android:id="@+id/vacancies_for_you"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:fontFamily="@font/displaybold"
+        android:text="@string/vacancies_for_you"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/use_bar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_vacancies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vacancies_for_you" />
+
+    <TextView
+        android:id="@+id/vacancy_count"
+        style="@style/WhiteText14"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_filter"
+        tools:text="@string/_145" />
+
+    <TextView
+        android:id="@+id/sorting_option"
+        style="@style/BlueText14"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="6dp"
+        android:text="@string/filter_by"
+        app:layout_constraintEnd_toStartOf="@+id/sort_icon"
+        app:layout_constraintTop_toBottomOf="@+id/search_filter" />
+
+    <ImageView
+        android:id="@+id/sort_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_filter" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

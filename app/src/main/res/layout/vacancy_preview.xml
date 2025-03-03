@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner8"
+    android:padding="16dp"
+    android:layout_marginBottom="16dp"
+    tools:context=".RootActivity">
+
+    <ImageButton
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/grey1"
+        android:contentDescription="@string/usual"
+        android:src="@drawable/ic_heart_empty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/count_of_looking"
+        style="@style/GreenText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Сейчас просматривает 1 человек" />
+
+    <TextView
+        android:id="@+id/profession"
+        style="@style/WhiteText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/count_of_looking"
+        tools:text="UI/UX Designer" />
+
+    <TextView
+        android:id="@+id/city"
+        style="@style/WhiteText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profession"
+        tools:text="Минск" />
+
+    <TextView
+        android:id="@+id/company"
+        style="@style/WhiteText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city"
+        tools:text="Мобирикс" />
+
+    <ImageView
+        android:id="@+id/checkmark"
+        style="@style/WhiteText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="0dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="@+id/company"
+        app:layout_constraintStart_toEndOf="@+id/company"
+        app:layout_constraintTop_toTopOf="@+id/company" />
+
+
+    <ImageView
+        android:id="@+id/bag"
+        style="@style/WhiteText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_bag"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company" />
+
+    <TextView
+        android:id="@+id/experience"
+        style="@style/WhiteText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="0dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bag"
+        app:layout_constraintStart_toEndOf="@+id/bag"
+        app:layout_constraintTop_toTopOf="@+id/bag"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="Опыт от 1 года до 3 лет" />
+
+    <TextView
+        android:id="@+id/publication_date"
+        style="@style/WhiteText14Marg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bag"
+        tools:text="Опубликовано 20 февраля" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/GreenRoundedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:paddingVertical="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/publication_date"
+        android:text="@string/reply" />
+</androidx.constraintlayout.widget.ConstraintLayout>

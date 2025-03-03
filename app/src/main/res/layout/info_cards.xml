@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/info_card"
+    android:layout_width="132dp"
+    android:layout_height="120dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/corner8"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:id="@+id/icon_round"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/icon_circle"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_location" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text"
+        style="@style/WhiteText14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:text="Вакансии рядом с вами" />
+
+    <TextView
+        android:id="@+id/btn_green"
+        style="@style/GreenText14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Поднять" />
+</LinearLayout>
+
+
